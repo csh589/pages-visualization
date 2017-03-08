@@ -1,6 +1,6 @@
 Report for the visualization test
 =================================
-The projects in this test are compiled by visual studio 2012, with VTK system(Version 6.3.0), and all the projects are built by CMake, which needs an additional config file CMakeLists.txt. <br>
+The projects in this test are compiled by visual studio 2012, with VTK system(Version 6.3.0), and all the projects are built by CMake, which needs an additional config file CMakeLists.txt. <br><br>
 This report can be devided into three parts:
 * overall visualization
 * identify the number of pages
