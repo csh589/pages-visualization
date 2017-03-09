@@ -7,7 +7,7 @@ In order to identify the number of pages, we assume that there would be an easy 
 At first, we may consider every paper has own the same thickness sothat we can calculate the number of the pages when we have known both the thickness of a page of paper and the thickness of the whole object. 
 It is a easy method to evaluate the approximate number of pages, but it can not be a general and precise way due to the pressure of the pages will change the thickness of a single page, and the air gaps between pages also make influence on the whole thickness.
 <br><br>
-Then we can notice that the air gaps between pages are unavoidble, and the gray level of these gaps are different from the level of the pages. 
+Then we can notice that the air gaps between pages are unavoidable, and the gray level of these gaps are different from the level of the pages. 
 So the differences may contribute to recognize pages, if we can detect the boundary of air and paper.
 <br><br>
 
