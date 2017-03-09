@@ -15,6 +15,6 @@ There are two main functions for displaying, the color map function and the opac
 
 
 Limited by the RAM, this visualization read only a part of the image data (200 images).<br>
-！[image](https://github.com/csh589/pages-visualization/blob/master/Result-Pictures/Overall-1.png)
-！[image](https://github.com/csh589/pages-visualization/blob/master/Result-Pictures/Overall-2.png)
-！[image](https://github.com/csh589/pages-visualization/blob/master/Result-Pictures/Overall-3.png)
+！[image](https://github.com/csh589/pages-visualization/raw/master/Result-Pictures/Overall-1.png)
+！[image](https://github.com/csh589/pages-visualization/raw/master/Result-Pictures/Overall-2.png)
+！[image](https://github.com/csh589/pages-visualization/raw/master/Result-Pictures/Overall-3.png)
