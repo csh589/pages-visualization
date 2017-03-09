@@ -2,9 +2,10 @@ Report for the visualization test
 =================================
 The projects in this test are compiled by visual studio 2012, with VTK system(Version 6.3.0), and all the projects are built by CMake, which needs an additional config file CMakeLists.txt. <br><br>
 This report can be devided into three parts:
-* overall visualization
-* identify the number of pages
-* extract the word in pages<br><br>
+* [overall visualization](https://github.com/csh589/pages-visualization/tree/master/OverallVisualization)
+* [identify the number of pages](https://github.com/csh589/pages-visualization/tree/master/Mission1-PagesQuantity)
+* [extract the word in pages](https://github.com/csh589/pages-visualization/tree/master/Mission2-ExtractWords)
+<br><br>
 
 
 The first part is about overall visualization. This part creates a window to display the whole configuration of the volume data, and the inner configuration can also be seen directly by adjust the opacity with the mouse botton.<br><br>
