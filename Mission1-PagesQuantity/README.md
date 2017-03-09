@@ -11,7 +11,7 @@ Then we can notice that the air gaps between pages are unavoidble, and the gray 
 So the differences may contribute to the recognization of pages, if we can detect the boundary of air and paper.
 <br><br>
 
-##1.2 The sobel operator
+##1.2 Sobel operator
 
 
 To recognize the egde of the pages, we applied the sobel operator to an image which is a part of the data. 
@@ -25,7 +25,22 @@ We can use the class in only one direction of the picture, so the calculation ca
 
 After applying sobel operator to the picture, we extract the edges of pages. 
 However, most of the edges are discrete and short, which makes it hard to add up. 
-Moreover, the operator also extract a lot of noise points. The points have high gray level and are possible to distube the counting of the pages. 
-In order to work out the two problems, asdfasdfsadfasdfsadfasdf is used here.
+Moreover, the operator also extracts a lot of noise points in the picture. The points have high gray level and are possible to disturb the counting of the pages. 
+<br><br>
+In order to work out the two problems, asdfasdfsadfasdfsadfasdf is used here. asdfasdfasdf can be used to remove the noise point and make the image smoother. The theoty of this function is that the large diffusion occurs only in the place where value of gradient is small,  and little diffusion when value of gradient is rather big. This feature help us to remove the noise and be free of destroying edges.
 
 
+##1.4 Pages counter
+
+
+After preprocessing, the next step is to find a way to count the edges more precisely. It is easily to understand that the edges can be verified through the transfomation of the value of pixel: Once the value enlarged, the counter increase at the same time. But even we preprocess the resulted picture, the edges are still discrete, which means simply count the pages in the Y direction may not work.
+<br><br>
+According to statistic, if we do the count in a range, there must be a number which would be close to the true value. And considering the feature of the edges: discrete, when we count the pages in a range, most of the value will be smaller than the true value. So we try to count the pages in the Y direction, then get the largest one as the desired value. 
+<br><br>
+When we count pages in the field in the Y direction, we get a possible sum pages' number and compared them to another one readed in another X coordinate. If we devide the field into parts, i.e. , count a part of pages in the Y direction and finally sum them up, the deviation of the counting will become smaller. Of course if we can devide the field into small enough parts, the result will almost be true value. Considering computing times, the field is devided into 4 parts.
+
+
+##1.5 Result
+
+
+According to the counted value in different ranges of X coordinate, we can get the average number of the counted pages: 37 pages. And the evaluation got from thickness of pages is 33 pages, proving that the pages counter works well. If we need to elevate the performance of this counter, we can divide the counting field more finely, and it can be sure that the value will distribute better, following statistic. So we can get a more precise expected value.
