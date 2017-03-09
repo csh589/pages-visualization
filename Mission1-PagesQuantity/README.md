@@ -20,21 +20,23 @@ In VTK, there is a class named vtkImageSobel2D, which offers encapsulation of th
 We can use the class in only one direction of the picture, so the calculation can be focused on the difference in Y direction without destroying the horizontal configuration of the pages.
 
 
-##1.3 The asdf
+##1.3 Anisotropic Diffusion
 
 
 After applying sobel operator to the picture, we extract the edges of pages. 
 However, most of the edges are discrete and short, which makes it hard to add up. 
 Moreover, the operator also extracts a lot of noise points in the picture. The points have high gray level and are possible to disturb the counting of the pages. 
 <br><br>
-In order to work out the two problems, asdfasdfsadfasdfsadfasdf is used here. asdfasdfasdf can be used to remove the noise point and make the image smoother. The theory of this function is that the large diffusion occurs only in the place where value of gradient is small,  and little diffusion when value of gradient is rather big. This feature help us to remove the noise and be free of destroying edges.
+In order to work out the two problems, Anisotropic Diffusion is used here. This diffusion can be used to remove the noise point and make the image smoother. The theory of this function is that the large diffusion occurs only in the place where value of gradient is small, while little diffusion occurs when value of gradient is rather big. This feature help us to remove the noise and be free of destroying edges.
 
 
 ##1.4 Pages counter
 
 
 After preprocessing, the next step is to find a way to count the edges more precisely. It is easily to understand that the edges can be verified through the transformation of the value of pixel: Once the value enlarged, the counter increase at the same time. But even we preprocess the resulted picture, the edges are still discrete, which means simply count the pages in the Y direction may not work.
-<br><br>
+<br>
+![img](https://github.com/csh589/pages-visualization/blob/master/Result-Pictures/Sobel.tif)
+<br>
 According to statistic, if we do the count in a range, there must be a number which would be close to the true value. And considering the feature of the edges: discrete, when we count the pages in a range, most of the value will be smaller than the true value. So we try to count the pages in the Y direction, then get the largest one as the desired value. 
 <br><br>
 When we count pages in the field in the Y direction, we get a possible sum pages' number and compared them to another one read in another X coordinate. If we divide the field into parts, i.e. , count a part of pages in the Y direction and finally sum them up, the deviation of the counting will become smaller. Of course if we can divide the field into small enough parts, the result will almost be true value. Considering computing times, the field is divided into 4 parts.
