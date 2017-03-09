@@ -35,7 +35,7 @@ In order to work out the two problems, Anisotropic Diffusion is used here. This 
 
 After preprocessing, the next step is to find a way to count the edges more precisely. It is easily to understand that the edges can be verified through the transformation of the value of pixel: Once the value enlarged, the counter increase at the same time. But even we preprocess the resulted picture, the edges are still discrete, which means simply count the pages in the Y direction may not work.
 <br>
-![](https://github.com/csh589/pages-visualization/raw/master/Result-Pictures/Sobel.tif)
+![](https://github.com/csh589/pages-visualization/raw/master/Result-Pictures/Sobel.jpg)
 <br>
 According to statistic, if we do the count in a range, there must be a number which would be close to the true value. And considering the feature of the edges: discrete, when we count the pages in a range, most of the value will be smaller than the true value. So we try to count the pages in the Y direction, then get the largest one as the desired value. 
 <br><br>
