@@ -19,12 +19,12 @@
 #include <vtkTIFFWriter.h>  
 int main()  
 {  
-	//read one of the images in the raw data.
+    //read one of the images in the raw data.
     vtkSmartPointer<vtkTIFFReader> reader =  
         vtkSmartPointer<vtkTIFFReader>::New();  
     reader->SetFileName("D:\\slice\\s0001.tif");
     reader->Update();  
-	//employ sobel operator twice to the edge detection in the axis of Y(height of the picture).
+    //employ sobel operator twice to the edge detection in the axis of Y(height of the picture).
     vtkSmartPointer<vtkImageSobel2D> sobelFilter =  
         vtkSmartPointer<vtkImageSobel2D>::New();  
     sobelFilter->SetInputConnection(reader->GetOutputPort());  
@@ -44,7 +44,7 @@ int main()
     double yRange[2];  
     absYsobel->GetOutput()->GetScalarRange(yRange);  
   
-	//change the value of pixels in order to display the picture properly.
+    //change the value of pixels in order to display the picture properly.
     vtkSmartPointer<vtkImageShiftScale> yShiftScale =  
         vtkSmartPointer<vtkImageShiftScale>::New();  
     yShiftScale->SetOutputScalarTypeToUnsignedChar();  
@@ -52,8 +52,8 @@ int main()
     yShiftScale->SetInputConnection(absYsobel->GetOutputPort());  
     yShiftScale->Update();  
 
-	//the second sobel filter.
-	vtkSmartPointer<vtkImageSobel2D> sobelFilter2 =  
+    //the second sobel filter.
+    vtkSmartPointer<vtkImageSobel2D> sobelFilter2 =  
         vtkSmartPointer<vtkImageSobel2D>::New();  
     sobelFilter2->SetInputConnection( yShiftScale->GetOutputPort());
 
@@ -79,22 +79,22 @@ int main()
     yyShiftScale->SetInputConnection(absYsobel->GetOutputPort());  
     yyShiftScale->Update();  
 	
-	//use Anisotropic Diffusion to lower the effection of noise.
-	vtkSmartPointer<vtkImageAnisotropicDiffusion2D> diffusion =  
+    //use Anisotropic Diffusion to lower the effection of noise.
+    vtkSmartPointer<vtkImageAnisotropicDiffusion2D> diffusion =  
         vtkSmartPointer<vtkImageAnisotropicDiffusion2D>::New();  
     diffusion->SetInputConnection(yyShiftScale->GetOutputPort());  
     diffusion->SetNumberOfIterations(100);  
     diffusion->SetDiffusionThreshold(20);  
     diffusion->Update();  
 
-	//write the image for the next step of pages' check.
-	vtkSmartPointer<vtkTIFFWriter> writer=
-		vtkSmartPointer<vtkTIFFWriter>::New();
-	writer->SetFileName("D:\\vtk\\slice-dealed.tif");
-	writer->SetInputConnection(diffusion->GetOutputPort());
-	writer->Write();
+    //write the image for the next step of pages' check.
+    vtkSmartPointer<vtkTIFFWriter> writer=
+	vtkSmartPointer<vtkTIFFWriter>::New();
+    writer->SetFileName("D:\\vtk\\slice-dealed.tif");
+    writer->SetInputConnection(diffusion->GetOutputPort());
+    writer->Write();
 
-	//display the generated picture.
+    //display the generated picture.
     vtkSmartPointer<vtkImageActor> ySobelActor =  
         vtkSmartPointer<vtkImageActor>::New();  
     ySobelActor->SetInputData(diffusion->GetOutput());  
