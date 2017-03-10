@@ -5,9 +5,9 @@ int CheckPixels(int start,int end,int xlabel,int GradientCount,vtkSmartPointer<v
 int main()
 {
 	vtkSmartPointer<vtkTIFFReader> reader =  
-        vtkSmartPointer<vtkTIFFReader>::New();  
-    reader->SetFileName("D:\\vtk\\slice-dealed.tif");
-    reader->Update();  
+            vtkSmartPointer<vtkTIFFReader>::New();  
+    	reader->SetFileName("D:\\vtk\\slice-dealed.tif");
+    	reader->Update();  
 	int PageCount1=0,PageCount2=0,PageCount3=0,PageCount4=0;
 	int SumPages;
 
