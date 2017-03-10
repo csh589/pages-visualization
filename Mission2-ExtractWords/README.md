@@ -1,4 +1,4 @@
-#Mission2 Extract the pages where there are words
+#Mission2 Extract the pages where characters exist
 
 
 ##2.1 Background
