@@ -4,7 +4,7 @@
 ##2.1 Background
 
 
-The overall visualization shows us the words inside the object by adjust the opacity. But the words are overlapped and can not be recognized easily. Additional, the noise is of high gray level, meaning that they obscured the words. There are two ways to extract the words out of the object. The first is Isosurface, and the other is using reslice class.
+The overall visualization shows us the words inside the object by adjust the opacity. But the words are overlapped and can not be recognized easily. Additional, the noises are of high gray level, meaning that they obscured the words. There are two ways to extract the words out of the object. The first is Isosurface, and the other is using reslice class.
 
 
 ##2.2 Gaussian smooth filter
