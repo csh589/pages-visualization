@@ -34,7 +34,7 @@ The solution of these two problem can be stated as following advice:
 1. If we slice the pages finely enough, there must be a boundary where the characters are just be in the specific position. But it also refer to a new problem that how to extract the pictures without overlapping characters. 
 
 
-2.In order to extract the meaningful pictures automatically, we need to check the configuration of the pixels. For example, build a list of possible pixels' configration about the 26 English characters, then when the program is checking the pixels, compared the current configuration to the list. Once if the configuration match one of the options in the list, extract the corresponding pages. This list can be done by Machine Learning.
+2. In order to extract the meaningful pictures automatically, we need to check the configuration of the pixels. For example, build a list of possible pixels' configration about the 26 English characters, then when the program is checking the pixels, compared the current configuration to the list. Once if the configuration match one of the options in the list, extract the corresponding pages. This list can be done by Machine Learning.
 
 
 The result is displayed as following pictures:
