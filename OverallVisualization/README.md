@@ -14,7 +14,7 @@ There are two main functions for displaying, the color map function and the opac
 ##Result
 
 
-Limited by the RAM, this visualization read only a part of the images in raw data (200 images).<br><br>
+Limited by the RAM, this visualization read only a part of the images in raw data (200 images). Further, we can add vtkRendererInteraction class in the program and change the setting of the interact style to achieve a better display.<br><br>
 ![image](https://github.com/csh589/pages-visualization/raw/master/Result-Pictures/Overall-1.png)
 ![image](https://github.com/csh589/pages-visualization/raw/master/Result-Pictures/Overall-2.png)
 ![image](https://github.com/csh589/pages-visualization/raw/master/Result-Pictures/Overall-3.png)
