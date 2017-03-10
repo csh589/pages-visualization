@@ -24,11 +24,11 @@ int main()
 		append->SetAppendAxis(1);
 		for( int j=1;j<8;j++)
 		{
-		sprintf(FileName,"D:/VTK/slice_iso/iso-%02d%02d.tif",j,i);
-		vtkSmartPointer<vtkTIFFReader> reader=
-		vtkSmartPointer<vtkTIFFReader>::New();
-		reader->SetFileName(FileName);
-		append->AddInputConnection(reader->GetOutputPort());
+			sprintf(FileName,"D:/VTK/slice_iso/iso-%02d%02d.tif",j,i);
+			vtkSmartPointer<vtkTIFFReader> reader=
+			    vtkSmartPointer<vtkTIFFReader>::New();
+			reader->SetFileName(FileName);
+			append->AddInputConnection(reader->GetOutputPort());
 		}
 		sprintf(OutputName,"D:/VTK/slice_result/iso-%04d.tif",i);
 		vtkSmartPointer<vtkTIFFWriter> writer =
